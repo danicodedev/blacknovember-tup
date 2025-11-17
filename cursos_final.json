@@ -1,0 +1,803 @@
+[
+  {
+    "nome": "Comunidade TSUP",
+    "imagem": "https://www.torneseumprogramador.com.br/images/destaques/comunidade.png",
+    "aulas": 0,
+    "horas": 0,
+    "valor": "de R$ 300,00 por 12x R$ 16,97 ou 170,00 à vista",
+    "compra_link": "https://pay.hotmart.com/W18397446W?off=5owzvhxi&checkoutMode=6&split=12",
+    "comunidade": true
+  },
+  {
+    "nome": "Programando com I.A",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/capa-programando-ia.webp",
+    "aulas": 0,
+    "horas": 0,
+    "valor": "de R$ 166,00 por 12x R$ 14,61 ou 145,49 à vista",
+    "compra_link": "https://pay.kiwify.com.br/xmjk7D1",
+    "comunidade": true
+  },
+  {
+    "nome": "Arquiteturas de Software",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/capa-arquiteturas-de-software.webp",
+    "aulas": 54,
+    "horas": 60,
+    "valor": "de R$ 166,00 por 12x R$ 14,61 ou 145,49 à vista",
+    "compra_link": "https://pay.kiwify.com.br/JCyZhYZ",
+    "comunidade": true
+  },
+  {
+    "nome": "Desafio Node",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/desafio_node.webp",
+    "aulas": 61,
+    "horas": 70,
+    "valor": "de R$ 166,00 por 12x R$ 14,61 ou 145,49 à vista",
+    "compra_link": "https://pay.kiwify.com.br/2zscr6n",
+    "comunidade": true
+  },
+  {
+    "nome": "AWS Serverless",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/aws-serverless.png",
+    "aulas": 0,
+    "horas": 0,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Desafio Elixir",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/desafio_elixir.webp",
+    "aulas": 47,
+    "horas": 96,
+    "valor": "de R$ 156,00 por 12x R$ 13,85 ou 137,90 à vista",
+    "compra_link": "https://pay.kiwify.com.br/V8d4Jio",
+    "comunidade": true
+  },
+  {
+    "nome": "Desafio Front-end",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/desafio_front_end.webp",
+    "aulas": 70,
+    "horas": 123,
+    "valor": "de R$ 156,00 por 12x R$ 7,12 ou 72,00 à vista",
+    "compra_link": "https://pay.kiwify.com.br/jaN51Rb",
+    "comunidade": true
+  },
+  {
+    "nome": "Desafio da Linguagem Rust",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/desafio_rust.webp",
+    "aulas": 56,
+    "horas": 130,
+    "valor": "de R$ 230,00 por 12x R$ 14,46 ou 144,00 à vista",
+    "compra_link": "https://pay.kiwify.com.br/gCLuGEL",
+    "comunidade": false
+  },
+  {
+    "nome": "Desafio de Golang",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/go.jpeg",
+    "aulas": 35,
+    "horas": 60,
+    "valor": "de R$ 147,00 por 12x R$ 8,86 ou 88,20 à vista",
+    "compra_link": "https://pay.kiwify.com.br/srhu0I1",
+    "comunidade": false
+  },
+  {
+    "nome": "Desafio PHP",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/desafio_php.jpeg",
+    "aulas": 50,
+    "horas": 159,
+    "valor": "de R$ 280,00 por 12x R$ 13,49 ou 134,40 à vista",
+    "compra_link": "https://pay.kiwify.com.br/2p9Ralv",
+    "comunidade": false
+  },
+  {
+    "nome": "WordPress para Programadores",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/wordpress.png",
+    "aulas": 21,
+    "horas": 17,
+    "valor": "de R$ 123,00 por 12x R$ 5,48 ou 54,60 à vista",
+    "compra_link": "https://pay.kiwify.com.br/D7Cdq7d",
+    "comunidade": false
+  },
+  {
+    "nome": "Angular com API .Net",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaCSharpAngular.png",
+    "aulas": 5,
+    "horas": 4,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Api multi-tenant em .Net 6",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/multiTenant_api.png",
+    "aulas": 31,
+    "horas": 34,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Aplicação Com Micro Serviços",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/micro-servicos.png",
+    "aulas": 33,
+    "horas": 34,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Aplicação com Rails 7",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/rails_7.png",
+    "aulas": 18,
+    "horas": 20,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Aplicação para Reprodução de Cursos | Ruby on Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/app-reprod-curso.png",
+    "aulas": 19,
+    "horas": 22,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Aplicativos",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/Aplicativos.png",
+    "aulas": 11,
+    "horas": 8,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Arquitetura de Software",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaArquitetura.png",
+    "aulas": 8,
+    "horas": 6,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": ".Net MAUI | Net 7",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/maui.png",
+    "aulas": 21,
+    "horas": 30,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Banco de Dados",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/banco-de-dados.png",
+    "aulas": 21,
+    "horas": 33,
+    "valor": "de R$ 109,00 por 12x R$ 6,57 ou 65,40 à vista",
+    "compra_link": "https://pay.kiwify.com.br/044Tlfq",
+    "comunidade": false
+  },
+  {
+    "nome": "Business Intelligence (BI)",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/business_intelligence.png",
+    "aulas": 11,
+    "horas": 12,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Cache",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CApaCache.png",
+    "aulas": 5,
+    "horas": 3,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "C# Avançado",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/csharp-avancado.png",
+    "aulas": 22,
+    "horas": 30,
+    "valor": "de R$ 140,00 por 12x R$ 8,43 ou 84,00 à vista",
+    "compra_link": "https://pay.kiwify.com.br/eKuaLEq",
+    "comunidade": false
+  },
+  {
+    "nome": "C# do Zero ao Profissional",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaCSharp.png",
+    "aulas": 110,
+    "horas": 74,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "C# 12 e .NET 8: Recursos Avançados e Boas Práticas",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/net8.png",
+    "aulas": 4,
+    "horas": 6,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Como deslanchar sua carreira em Tecnologia",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/financeiro/transforacao-e-prosperidade.png",
+    "aulas": 2,
+    "horas": 3,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Criação de API´S | C#",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/criacao-apis.png",
+    "aulas": 21,
+    "horas": 45,
+    "valor": "de R$ 126,00 por 12x R$ 7,23 ou 72,00 à vista",
+    "compra_link": "https://pay.kiwify.com.br/9IdlPDC",
+    "comunidade": false
+  },
+  {
+    "nome": "Dapper",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/dapper.png",
+    "aulas": 9,
+    "horas": 13,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Data Science",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/data_science.jpeg",
+    "aulas": 23,
+    "horas": 34,
+    "valor": "de R$ 105,00 por 12x R$ 6,33 ou 63,00 à vista",
+    "compra_link": "https://pay.kiwify.com.br/T8JOHk3",
+    "comunidade": false
+  },
+  {
+    "nome": "Desafio de Java",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/desafio-java.jpeg",
+    "aulas": 24,
+    "horas": 36,
+    "valor": "de R$ 124,00 por 12x R$ 7,47 ou 74,40 à vista",
+    "compra_link": "https://pay.kiwify.com.br/Iys2ujq",
+    "comunidade": false
+  },
+  {
+    "nome": "Design Patterns",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/design_patterns.png",
+    "aulas": 13,
+    "horas": 8,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Devops",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/devops.png",
+    "aulas": 23,
+    "horas": 27,
+    "valor": "de R$ 179,20 por 12x R$ 10,84 ou 107,94 à vista",
+    "compra_link": "https://pay.kiwify.com.br/U9Y2p5d",
+    "comunidade": false
+  },
+  {
+    "nome": "Docker Compose on Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/docker_rails.png",
+    "aulas": 8,
+    "horas": 9,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "DotNet 7 | C# 11",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/dotnet-csharp.jpeg",
+    "aulas": 23,
+    "horas": 45,
+    "valor": "de R$ 131,00 por 12x R$ 7,89 ou 78,60 à vista",
+    "compra_link": "https://pay.kiwify.com.br/UI2nH0h",
+    "comunidade": false
+  },
+  {
+    "nome": "Do Zero a API | Ruby",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/novo_zero_a_api.png",
+    "aulas": 11,
+    "horas": 12,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Do Zero a Aplicação Desktop",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/novo-app-desktop.png",
+    "aulas": 12,
+    "horas": 13,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Do Zero ao Aplicativo Mobile 2.0 | C# - Ionic",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/app-csharp-a2.png",
+    "aulas": 25,
+    "horas": 30,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Do Zero ao Aplicativo Mobile | Ruby on Rails - Ionic",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/app-ror-ajs.png",
+    "aulas": 10,
+    "horas": 11,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Do Zero ao Meio de Pagamento | Ruby on Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/ror-meio-pagamento.png",
+    "aulas": 11,
+    "horas": 13,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "ECMAScript(JavaScript)",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaJavaScript.png",
+    "aulas": 122,
+    "horas": 82,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Finanças Pessoais",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/financeiro/financas-pessoais.png",
+    "aulas": 2,
+    "horas": 3,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Fluxo de Caixa | React.js",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/fluxo-caixa-react.png",
+    "aulas": 8,
+    "horas": 9,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Gerenciamento de Academias | Ruby on Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/gerenciamento.png",
+    "aulas": 22,
+    "horas": 25,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "GIT",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/git.png",
+    "aulas": 4,
+    "horas": 5,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Google Cloud Platform - GCP",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/gcp.png",
+    "aulas": 4,
+    "horas": 5,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "GraphQL",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/graphql.png",
+    "aulas": 6,
+    "horas": 7,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "HTML5 e CSS3",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaHTMLCSS.png",
+    "aulas": 35,
+    "horas": 24,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Infraestrutura na Nuvem",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/Infraestrutura.png",
+    "aulas": 26,
+    "horas": 31,
+    "valor": "de R$ 150,00 por 12x R$ 6,33 ou 63,00 à vista",
+    "compra_link": "https://pay.kiwify.com.br/9YK9MKb",
+    "comunidade": false
+  },
+  {
+    "nome": "Iniciando com React",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/react.png",
+    "aulas": 16,
+    "horas": 15,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Iniciando com Type ORM",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/type_orm.png",
+    "aulas": 6,
+    "horas": 7,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Iniciando em HTML",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/html.jpg",
+    "aulas": 22,
+    "horas": 24,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Integração Contínua",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaIntegracaoContinua.png",
+    "aulas": 5,
+    "horas": 3,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Introdução ao Capacitor",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/capacitor.png",
+    "aulas": 6,
+    "horas": 8,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Introdução ao Entity Framework",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/entity_framework.png",
+    "aulas": 20,
+    "horas": 25,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Introdução ao Sequelize",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/sequelize.png",
+    "aulas": 7,
+    "horas": 8,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Inteligência Artificial",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/inteligencia_artificial.jpeg",
+    "aulas": 8,
+    "horas": 18,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Java",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/JavaCapa.jpg",
+    "aulas": 16,
+    "horas": 14,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Kubernetes",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/kubernetes.png",
+    "aulas": 23,
+    "horas": 41,
+    "valor": "de R$ 103,00 por 12x R$ 6,21 ou 61,80 à vista",
+    "compra_link": "https://pay.kiwify.com.br/91Fulfo",
+    "comunidade": false
+  },
+  {
+    "nome": "Locação de Veiculos | React Native",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/rn-locacao.png",
+    "aulas": 14,
+    "horas": 15,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Locação de Veiculos | Ruby on Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/rOR-locacao.png",
+    "aulas": 23,
+    "horas": 26,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Lógica de Programação | JavaScript",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/logica-js.png",
+    "aulas": 21,
+    "horas": 24,
+    "valor": "de R$ 88,80 por 12x R$ 5,30 ou 52,80 à vista",
+    "compra_link": "https://pay.kiwify.com.br/avQrYAa",
+    "comunidade": false
+  },
+  {
+    "nome": "Python",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/capa-python.jpeg",
+    "aulas": 21,
+    "horas": 32,
+    "valor": "de R$ 92,00 por 12x R$ 5,54 ou 55,20 à vista",
+    "compra_link": "https://pay.kiwify.com.br/DCP2TS7",
+    "comunidade": false
+  },
+  {
+    "nome": "Lógica de Programação | Ruby",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/logica-ruby.png",
+    "aulas": 21,
+    "horas": 25,
+    "valor": "de R$ 99,00 por 12x R$ 5,96 ou 59,40 à vista",
+    "compra_link": "https://pay.kiwify.com.br/E0ovuKb",
+    "comunidade": false
+  },
+  {
+    "nome": "Marketing Digital",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/financeiro/marketing-digital.png",
+    "aulas": 2,
+    "horas": 3,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Mercado Corporativo",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/financeiro/mercado-corporativo.png",
+    "aulas": 21,
+    "horas": 23,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Mindset do Programador Milionário",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/financeiro/mindset-programador-milionario.png",
+    "aulas": 9,
+    "horas": 12,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Multiplas API´S",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/multiplas-apis.png",
+    "aulas": 22,
+    "horas": 27,
+    "valor": "de R$ 120,00 por 12x R$ 7.59 ou 75,60 à vista",
+    "compra_link": "https://pay.kiwify.com.br/IlpYK6q",
+    "comunidade": false
+  },
+  {
+    "nome": "Negócios em Tecnologia",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaNegócios.png",
+    "aulas": 4,
+    "horas": 2,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Next.js",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/nextjs.png",
+    "aulas": 8,
+    "horas": 9,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "NHibernate| C#",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/nhibernate.png",
+    "aulas": 9,
+    "horas": 7,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "PHP",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaPHP.png",
+    "aulas": 10,
+    "horas": 4,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Programação Orientada a Objetos | C#",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/poo-csharp.png",
+    "aulas": 21,
+    "horas": 26,
+    "valor": "de R$ 124,00 por 12x R$ 7,47 ou 124,00 à vista",
+    "compra_link": "https://pay.kiwify.com.br/Vr8q6OB",
+    "comunidade": false
+  },
+  {
+    "nome": "Python com Django",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/capa-django.png",
+    "aulas": 7,
+    "horas": 6,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Quality Assurance (QA)",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/quality-assurance.png",
+    "aulas": 21,
+    "horas": 36,
+    "valor": "de R$ 114,00 por 12x R$ 6,87 ou 68,40 à vista",
+    "compra_link": "https://pay.kiwify.com.br/cBM3zn1",
+    "comunidade": false
+  },
+  {
+    "nome": "React com API .Net",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaCSharpReact.png",
+    "aulas": 5,
+    "horas": 4,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Ruby on Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaRuby.png",
+    "aulas": 70,
+    "horas": 45,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Ruby on Rails Avançado",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/ruby_avancado.jpeg",
+    "aulas": 35,
+    "horas": 75,
+    "valor": "de R$ 210,00 por 12x R$ 12,65 ou 126,00 à vista",
+    "compra_link": "https://pay.kiwify.com.br/vC4xuyB",
+    "comunidade": false
+  },
+  {
+    "nome": "Segurança",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/seguranca-imersao.png",
+    "aulas": 15,
+    "horas": 7,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Serviço de Integração com Windows Background Services",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/servico_integracao.png",
+    "aulas": 25,
+    "horas": 30,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Sistema de Controle de Estoque | Ruby on Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/sistema-controle-estoque.png",
+    "aulas": 2,
+    "horas": 3,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "SQL Server",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaBD.png",
+    "aulas": 18,
+    "horas": 7,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "SQL - Structured Query Language",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/sql.png",
+    "aulas": 15,
+    "horas": 16,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "TDD COM RSPEC 2.0",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/tdd_rspec.png",
+    "aulas": 5,
+    "horas": 7,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "TDD com RSPEC | Ruby on Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/tdd-com-rspc.png",
+    "aulas": 6,
+    "horas": 7,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "TDD e BDD - Testes Automatizados",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/tdd-e-bdd.png",
+    "aulas": 5,
+    "horas": 8,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Vue.js com API .Net",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaCSharpVue.png",
+    "aulas": 4,
+    "horas": 2,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  },
+  {
+    "nome": "Websokets em Rails",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/websokets_rails.png",
+    "aulas": 5,
+    "horas": 7,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Windows Presentation Foundation (WPF) | .Net 7",
+    "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/wpf_dot_net.png",
+    "aulas": 10,
+    "horas": 15,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": true
+  },
+  {
+    "nome": "Wordpress",
+    "imagem": "https://www.torneseumprogramador.com.br/images/capas/CapaWordPress.png",
+    "aulas": 26,
+    "horas": 15,
+    "valor": null,
+    "compra_link": null,
+    "comunidade": false
+  }
+]

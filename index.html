@@ -1,0 +1,1770 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Black November • Comunidade Torne-se um Programador</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #020617;
+      --bg-alt: #030712;
+      --bg-card: rgba(15,23,42,0.93);
+      --bg-card-soft: rgba(15,23,42,0.75);
+      --accent: #f97316;
+      --accent-soft: rgba(248,150,65,0.32);
+      --accent-strong: #fb923c;
+      --accent-green: #22c55e;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(148,163,184,0.27);
+      --radius-xl: 24px;
+      --shadow-soft: 0 24px 60px rgba(15,23,42,0.85);
+      --shadow-chip: 0 10px 30px rgba(0,0,0,0.55);
+      --container-max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% -10%, #1d4ed8 0, transparent 55%),
+        radial-gradient(circle at 90% -20%, #7c2d12 0, transparent 55%),
+        radial-gradient(circle at 50% 120%, #111827 0, #020617 60%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(22px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.98), rgba(15,23,42,0.86), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.16);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      font-family: "Space Grotesk", system-ui;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .82rem;
+    }
+
+    .nav-logo span {
+      background: linear-gradient(120deg, #f97316, #fde047);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-chip {
+      font-size: .68rem;
+      padding: .18rem .7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: var(--text-muted);
+      background: rgba(15,23,42,0.85);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .nav-badge-urgency {
+      font-size: .75rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      background: rgba(248,113,113,0.12);
+      border: 1px solid rgba(248,113,113,0.7);
+      color: #fecaca;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: .86rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, filter .2s ease;
+      font-family: inherit;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #fde047, #f97316 40%, #ea580c 80%);
+      color: #0b1120;
+      box-shadow: 0 20px 45px rgba(251,146,60,0.8);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.02);
+      filter: brightness(1.08);
+      box-shadow: 0 30px 65px rgba(251,146,60,1);
+    }
+
+    .btn-secondary {
+      background: rgba(15,23,42,0.95);
+      color: var(--text-main);
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      background: rgba(15,23,42,1);
+    }
+
+    .btn-sm {
+      padding: 0.55rem 1.1rem;
+      font-size: .8rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .25rem .75rem;
+      border-radius: 999px;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.3), rgba(15,23,42,0.9));
+      color: #e0f2fe;
+    }
+
+    .pill-dot {
+      width: .5rem;
+      height: .5rem;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34,197,94,0.25);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 5.2rem 0 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% -45%, rgba(59,130,246,0.9), transparent 65%),
+        radial-gradient(circle at -20% 80%, rgba(248,113,113,0.75), transparent 75%),
+        radial-gradient(circle at 110% 80%, rgba(192,132,252,0.85), transparent 70%);
+      opacity: .18;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.1fr);
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-family: "Space Grotesk", system-ui;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-top: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: radial-gradient(circle at 0 0, #facc15, #fb923c 45%, #f97316 70%, #f97316 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: .97rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.6rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      align-items: center;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-badge {
+      padding: .2rem .6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.44);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin-top: 1.3rem;
+    }
+
+    .hero-stat {
+      min-width: 7.5rem;
+    }
+
+    .hero-stat-label {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: var(--text-muted);
+      margin-bottom: .25rem;
+    }
+
+    .hero-stat-value {
+      font-family: "Space Grotesk";
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 0 0, rgba(248,250,252,0.12), transparent 55%),
+                  radial-gradient(circle at 100% 100%, rgba(59,130,246,0.22), transparent 60%),
+                  var(--bg-card);
+      box-shadow: var(--shadow-soft);
+      padding: 1.5rem;
+      border: 1px solid rgba(148,163,184,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-glow {
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 20% -10%, rgba(248,250,252,0.13), transparent 55%),
+        radial-gradient(circle at 110% 110%, rgba(56,189,248,0.18), transparent 50%);
+      opacity: .7;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .lote-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .35rem .8rem;
+      border-radius: 999px;
+      font-size: .78rem;
+      background: radial-gradient(circle at 0 0, #f97316, #b91c1c);
+      color: #fffbeb;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      box-shadow: 0 15px 35px rgba(248,113,113,0.85);
+    }
+
+    .lote-pill span {
+      height: 1.2rem;
+      width: 1.2rem;
+      border-radius: 999px;
+      border: 2px solid rgba(254,249,195,0.9);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      background: rgba(15,23,42,0.35);
+    }
+
+    .hero-card-title {
+      font-family: "Space Grotesk";
+      font-size: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: .35rem;
+    }
+
+    .hero-card-subtitle {
+      font-size: .9rem;
+      color: var(--text-muted);
+    }
+
+    .hero-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: .75rem;
+      margin-top: 1.25rem;
+    }
+
+    .hero-price-main {
+      font-family: "Space Grotesk";
+      font-size: 1.7rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #f97316, #fde68a);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-price-installments {
+      font-size: .86rem;
+      color: var(--text-muted);
+    }
+
+    .hero-price-avis {
+      font-size: .9rem;
+      margin-top: .25rem;
+    }
+
+    .hero-price-avis span {
+      color: #facc15;
+      font-weight: 600;
+    }
+
+    .hero-lote-bar {
+      margin-top: 1.35rem;
+      margin-bottom: .35rem;
+    }
+
+    .hero-lote-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--text-muted);
+      margin-bottom: .3rem;
+    }
+
+    .hero-lote-bar-track {
+      position: relative;
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.55);
+      height: .9rem;
+    }
+
+    .hero-lote-bar-fill {
+      position: absolute;
+      inset: 0;
+      width: 0;
+      background: linear-gradient(90deg, #22c55e, #a3e635, #facc15, #f97316);
+      box-shadow: 0 0 25px rgba(250,204,21,0.9);
+      border-radius: inherit;
+      transform-origin: left center;
+      transition: width 1.8s cubic-bezier(.16,1,.3,1);
+    }
+
+    .hero-lote-bar-hint {
+      font-size: .78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-footer {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .hero-card-safe {
+      display: flex;
+      gap: .4rem;
+      align-items: center;
+      font-size: .78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-safe-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .68rem;
+    }
+
+    /* GENERIC SECTION */
+
+    section {
+      padding: 3.5rem 0;
+      position: relative;
+    }
+
+    section:nth-of-type(2n) {
+      background: radial-gradient(circle at 0 0, rgba(15,23,42,0.95), #020617);
+    }
+
+    .section-header {
+      margin-bottom: 2.1rem;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk";
+      font-size: 1.6rem;
+      margin-bottom: .4rem;
+    }
+
+    .section-subtitle {
+      font-size: .95rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+    }
+
+    /* PAS SECTION */
+
+    .pas-grid {
+      display: grid;
+      gap: 1.6rem;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+
+    .pas-card {
+      border-radius: 20px;
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-soft);
+      padding: 1.3rem 1.3rem 1.35rem;
+      box-shadow: 0 15px 30px rgba(15,23,42,0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pas-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      opacity: .18;
+      background:
+        radial-gradient(circle at 0 0, rgba(248,250,252,0.25), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(248,113,113,0.7), transparent 60%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .pas-card-label {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--text-muted);
+      margin-bottom: .3rem;
+    }
+
+    .pas-card-title {
+      font-weight: 600;
+      margin-bottom: .45rem;
+    }
+
+    .pas-card p {
+      font-size: .9rem;
+      color: var(--text-muted);
+    }
+
+    .pas-card ul {
+      list-style: none;
+      margin-top: .55rem;
+      font-size: .9rem;
+      color: var(--text-muted);
+    }
+
+    .pas-card li {
+      display: flex;
+      gap: .5rem;
+      margin-top: .4rem;
+    }
+
+    .pas-dot {
+      width: .5rem;
+      height: .5rem;
+      border-radius: 999px;
+      background: rgba(248,250,252,0.6);
+      margin-top: .35rem;
+      flex-shrink: 0;
+    }
+
+    .pas-highlight {
+      background: linear-gradient(120deg, rgba(34,197,94,0.12), rgba(56,189,248,0.08));
+      border-radius: 14px;
+      padding: .7rem .8rem;
+      border: 1px dashed rgba(34,197,94,0.55);
+      font-size: .88rem;
+      margin-top: .7rem;
+    }
+
+    /* FEATURES SECTION */
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 1.3rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card-soft);
+      border-radius: 18px;
+      padding: 1.1rem 1.2rem 1.25rem;
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 32px rgba(15,23,42,0.85);
+    }
+
+    .feature-icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: .6rem;
+      font-size: 1.1rem;
+    }
+
+    .feature-title {
+      font-size: .98rem;
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+
+    .feature-text {
+      font-size: .87rem;
+      color: var(--text-muted);
+    }
+
+    /* TRILHAS SECTION */
+
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 1.4rem;
+    }
+
+    .track-card {
+      background: radial-gradient(circle at 0 0, rgba(248,250,252,0.12), transparent 55%), var(--bg-card);
+      border-radius: 22px;
+      border: 1px solid rgba(148,163,184,0.4);
+      overflow: hidden;
+      box-shadow: 0 22px 40px rgba(15,23,42,0.9);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .track-thumb {
+      aspect-ratio: 16/7;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .track-body {
+      padding: 1rem 1.1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .track-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: .78rem;
+      color: var(--text-muted);
+      margin-bottom: .2rem;
+    }
+
+    .track-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .track-text {
+      font-size: .86rem;
+      color: var(--text-muted);
+    }
+
+    /* COURSES SECTION */
+
+    .courses-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.2rem;
+      align-items: flex-end;
+      margin-bottom: 1.9rem;
+    }
+
+    .courses-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      align-items: center;
+    }
+
+    .input-search {
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      padding: .55rem .95rem;
+      color: var(--text-main);
+      font-size: .83rem;
+      min-width: 230px;
+      outline: none;
+    }
+
+    .input-search::placeholder {
+      color: #6b7280;
+    }
+
+    .courses-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      font-size: .82rem;
+    }
+
+    .courses-meta-item {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(148,163,184,0.45);
+      box-shadow: var(--shadow-chip);
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 1.2rem;
+    }
+
+    .course-card {
+      background: radial-gradient(circle at 0 0, rgba(248,250,252,0.1), transparent 55%), var(--bg-card);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.25);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      position: relative;
+      box-shadow: 0 14px 32px rgba(15,23,42,0.9);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(248,250,252,0.6);
+      box-shadow: 0 22px 60px rgba(15,23,42,1);
+    }
+
+    .course-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .course-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .course-pill {
+      position: absolute;
+      left: .7rem;
+      top: .6rem;
+      padding: .18rem .5rem;
+      border-radius: 999px;
+      font-size: .68rem;
+      background: rgba(15,23,42,0.85);
+      border: 1px solid rgba(148,163,184,0.7);
+      color: #e5e7eb;
+    }
+
+    .course-body {
+      padding: .9rem .95rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      flex: 1;
+    }
+
+    .course-title {
+      font-size: .95rem;
+      font-weight: 600;
+      min-height: 2.2em;
+    }
+
+    .course-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .78rem;
+      color: var(--text-muted);
+      margin-top: .3rem;
+    }
+
+    .course-meta span {
+      display: inline-flex;
+      gap: .28rem;
+      align-items: center;
+    }
+
+    .course-dot {
+      width: .4rem;
+      height: .4rem;
+      border-radius: 999px;
+      background: rgba(248,250,252,0.5);
+    }
+
+    .course-footer {
+      margin-top: .75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    /* BONUS SECTION */
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 1.3rem;
+    }
+
+    .bonus-card {
+      background: var(--bg-card-soft);
+      border-radius: 18px;
+      padding: 1.1rem 1.2rem 1.2rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 18px 38px rgba(15,23,42,0.92);
+    }
+
+    .bonus-label {
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-strong);
+      margin-bottom: .25rem;
+    }
+
+    .bonus-title {
+      font-size: .98rem;
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+
+    .bonus-text {
+      font-size: .87rem;
+      color: var(--text-muted);
+    }
+
+    /* GUARANTEE */
+
+    .guarantee {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,0.9fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .guarantee-big {
+      font-family: "Space Grotesk";
+      font-size: 5.5rem;
+      font-weight: 800;
+      line-height: .9;
+      background: linear-gradient(160deg, #f97316, #facc15);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .guarantee-label {
+      font-size: 1.05rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: .6rem;
+    }
+
+    .guarantee-text {
+      font-size: .95rem;
+      color: var(--text-muted);
+      margin-top: .8rem;
+    }
+
+    .guarantee-card {
+      background: var(--bg-card);
+      border-radius: 26px;
+      padding: 1.4rem 1.6rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* FAQ */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1fr);
+      gap: 2.3rem;
+      align-items: flex-start;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--bg-card-soft);
+      border-radius: 16px;
+      padding: .95rem 1rem;
+      border: 1px solid rgba(148,163,184,0.4);
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease;
+    }
+
+    .faq-item.open {
+      background: rgba(15,23,42,0.96);
+      border-color: rgba(251,146,60,0.8);
+    }
+
+    .faq-question {
+      font-size: .93rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .faq-answer {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-top: .55rem;
+      display: none;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-toggle {
+      font-size: 1.1rem;
+      color: #9ca3af;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      text-align: center;
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+
+    .final-cta-title {
+      font-family: "Space Grotesk";
+      font-size: 2rem;
+      margin-bottom: .6rem;
+    }
+
+    .final-cta-sub {
+      font-size: .95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    footer {
+      padding: 2rem 0 2.5rem;
+      text-align: center;
+      font-size: .78rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(148,163,184,0.25);
+      margin-top: 4rem;
+      background: rgba(2,6,23,0.95);
+    }
+
+    /* ANIMAÇÕES / RESPONSIVO */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .courses-grid {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+      }
+      .features-grid,
+      .bonus-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+      .tracks-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0,1fr);
+        gap: 2.4rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .guarantee {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .faq-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .courses-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .features-grid,
+      .bonus-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .tracks-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-cta {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .courses-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .pas-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="nav-left">
+          <div class="nav-logo">
+            <span>TUP</span>
+            <span style="font-weight:500;color:#9ca3af;letter-spacing:.02em;">Comunidade</span>
+          </div>
+          <div class="nav-chip">Black November • Lote 01 ativo</div>
+        </div>
+        <div class="nav-cta">
+          <div class="nav-badge-urgency">⚠ Lote 01 quase encerrando</div>
+          <button class="btn btn-secondary btn-sm" onclick="scrollToSection('cursos')">Ver tudo que está incluso</button>
+          <button class="btn btn-primary btn-sm" onclick="scrollToSection('checkout')">Garantir meu acesso</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left reveal">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            Black November • Comunidade Torne-se um Programador
+          </div>
+
+          <h1 class="hero-title">
+            Você está perdendo mais um ano<br/>
+            <span>travado nos mesmos tutoriais.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            <strong>Problema:</strong> você assiste um monte de aula solta, tenta começar mil cursos
+            e continua travando no básico. Enquanto isso, as vagas e projetos bem pagos estão sendo
+            preenchidos por quem decidiu levar programação a sério.
+          </p>
+
+          <p class="hero-subtitle" style="margin-top:.8rem;">
+            Nesta Black November, você entra para a <strong>Comunidade Torne-se um Programador</strong> com
+            acesso a dezenas de trilhas, projetos e atualizações para 2025 por um valor de
+            <strong>Lote 01</strong> que não volta depois.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToSection('checkout')">
+              Quero sair do básico agora
+              <span>🔥</span>
+            </button>
+            <button class="btn btn-secondary" onclick="scrollToSection('pas')">
+              Ver como essa oferta resolve meu problema
+            </button>
+          </div>
+
+          <div class="hero-badges">
+            <span class="hero-badge">Acesso a dezenas de cursos e desafios</span>
+            <span class="hero-badge">Atualizações constantes para 2025</span>
+            <span class="hero-badge">Comunidade focada em prática</span>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-label">Cursos</div>
+              <div class="hero-stat-value" data-stat="cursos">—</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Aulas</div>
+              <div class="hero-stat-value" data-stat="aulas">—</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Horas de conteúdo</div>
+              <div class="hero-stat-value" data-stat="horas">—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO CARD / CHECKOUT -->
+        <div class="hero-card reveal" id="checkout">
+          <div class="hero-card-glow"></div>
+          <div class="hero-card-inner">
+            <div class="lote-pill">
+              <span>01</span>
+              Lote 01 • Black November
+            </div>
+
+            <h2 class="hero-card-title">Entre agora na Comunidade Torne-se um Programador</h2>
+            <p class="hero-card-subtitle">
+              Acesso completo a todos os cursos da comunidade, atualizações futuras e bônus da Black November.
+            </p>
+
+            <div class="hero-price-row">
+              <div class="hero-price-main">12x R$ 16,97</div>
+              <div class="hero-price-installments">
+                ou <strong>R$ 170,00 à vista</strong><br/>
+                <span style="font-size:.76rem;color:var(--text-muted);">de R$ 300,00 por esse valor especial de Lote 01</span>
+              </div>
+            </div>
+
+            <p class="hero-price-avis">
+              <span>Atenção:</span> este é o valor do <strong>Lote 01</strong>. Assim que ele virar, o preço sobe
+              imediatamente para o próximo lote.
+            </p>
+
+            <div class="hero-lote-bar">
+              <div class="hero-lote-bar-label">
+                <span>Lote 01 em andamento</span>
+                <span id="lote-percent-label">65% das vagas preenchidas</span>
+              </div>
+              <div class="hero-lote-bar-track">
+                <div class="hero-lote-bar-fill" id="lote-fill"></div>
+              </div>
+            </div>
+            <p class="hero-lote-bar-hint">
+              Quando a barra chegar a 100%, o <strong>Lote 01</strong> é encerrado e este valor não volta.
+            </p>
+
+            <div class="hero-card-footer">
+              <button class="btn btn-primary" style="flex:1" onclick="scrollToSection('cursos')">
+                Ver tudo que vou receber
+              </button>
+              <div class="hero-card-safe">
+                <div class="hero-card-safe-icon">✓</div>
+                <div>
+                  Garantia incondicional de <strong>7 dias</strong>.<br/>
+                  Se não fizer sentido, é só pedir reembolso.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAS SECTION -->
+    <section id="pas">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Problema, Agitação e Solução: por que essa Black November existe</h2>
+          <p class="section-subtitle">
+            Em vez de só te mostrar um preço, deixa eu te mostrar o cenário real de quem está tentando
+            aprender programação sozinho em 2024/2025.
+          </p>
+        </div>
+
+        <div class="pas-grid">
+          <article class="pas-card reveal">
+            <div class="pas-card-label">Problema</div>
+            <h3 class="pas-card-title">Você sabe que precisa programar, mas continua travado no básico.</h3>
+            <ul>
+              <li>
+                <span class="pas-dot"></span>
+                <span>Começa um monte de cursos e nunca termina nenhum.</span>
+              </li>
+              <li>
+                <span class="pas-dot"></span>
+                <span>Fica pulando de vídeo em vídeo no YouTube sem um plano claro.</span>
+              </li>
+              <li>
+                <span class="pas-dot"></span>
+                <span>Quando tenta aplicar na prática, não sabe nem por onde começar.</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="pas-card reveal">
+            <div class="pas-card-label">Agitação</div>
+            <h3 class="pas-card-title">Enquanto você procrastina, o mercado não está parando para te esperar.</h3>
+            <ul>
+              <li>
+                <span class="pas-dot"></span>
+                <span>Vagas de estágio, júnior e freela sendo preenchidas por quem começou meses antes de você.</span>
+              </li>
+              <li>
+                <span class="pas-dot"></span>
+                <span>Ano passando, e você ainda se sente “iniciante eterno” em HTML, CSS e lógica.</span>
+              </li>
+              <li>
+                <span class="pas-dot"></span>
+                <span>A sensação de estar ficando para trás aumenta, e a autoestima vai diminuindo.</span>
+              </li>
+            </ul>
+            <div class="pas-highlight">
+              Se nada mudar agora, ano que vem você vai estar exatamente na mesma, só que com mais frustração acumulada.
+            </div>
+          </article>
+
+          <article class="pas-card reveal">
+            <div class="pas-card-label">Solução</div>
+            <h3 class="pas-card-title">Entrar na Comunidade certa, com trilhas prontas e projetos reais.</h3>
+            <p>
+              A Comunidade Torne-se um Programador te dá acesso a dezenas de cursos organizados em trilhas
+              (Fundamentos, Frontend, Backend e muito mais), projetos guiados e um caminho claro para você sair do zero
+              e evoluir de verdade.
+            </p>
+            <ul>
+              <li>
+                <span class="pas-dot"></span>
+                <span>Você sabe exatamente o que estudar em cada fase.</span>
+              </li>
+              <li>
+                <span class="pas-dot"></span>
+                <span>Pratica com projetos que geram portfólio.</span>
+              </li>
+              <li>
+                <span class="pas-dot"></span>
+                <span>Tem uma base forte para disputar vagas de estágio, júnior e freelas.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">O que você encontra dentro da Comunidade</h2>
+          <p class="section-subtitle">
+            Não é só um “pacote de cursos”. É um ecossistema para te tirar da estaca zero e te levar para o nível de
+            programador que entrega resultado.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon">📚</div>
+            <h3 class="feature-title">Trilhas completas e organizadas</h3>
+            <p class="feature-text">
+              Caminhos sugeridos para sair do zero, consolidar fundamentos e avançar para Frontend, Backend,
+              bancos de dados, DevOps e mais.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">🧱</div>
+            <h3 class="feature-title">Projetos práticos para portfólio</h3>
+            <p class="feature-text">
+              Não é só teoria: você constrói projetos reais, aplicando o que aprendeu e criando um portfólio
+              que você consegue mostrar em entrevistas.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">🤝</div>
+            <h3 class="feature-title">Comunidade para não estudar sozinho</h3>
+            <p class="feature-text">
+              Gente passando pelos mesmos desafios que você, para trocar ideia, tirar dúvidas e se manter motivado.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">⚙️</div>
+            <h3 class="feature-title">Atualizações constantes</h3>
+            <p class="feature-text">
+              A tecnologia muda rápido – e a comunidade acompanha. Novos cursos, revisões e trilhas atualizadas
+              com o que o mercado está pedindo.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">🧠</div>
+            <h3 class="feature-title">Conteúdo de mindset e carreira</h3>
+            <p class="feature-text">
+              A parte técnica importa, mas mentalidade, consistência e visão de carreira fazem toda a diferença
+              na hora de conquistar oportunidades.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">🔥</div>
+            <h3 class="feature-title">Bônus exclusivos da Black November</h3>
+            <p class="feature-text">
+              Aulas extras, conteúdos focados em IA e um pacote de vantagens que só entram nessa condição
+              especial de Lote 01.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRILHAS -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Trilhas para guiar a sua evolução</h2>
+          <p class="section-subtitle">
+            Comece do zero, consolide fundamentos e avance para o estágio seguinte sem se perder. Aqui está um exemplo
+            de como você pode organizar seus estudos dentro da comunidade:
+          </p>
+        </div>
+
+        <div class="tracks-grid">
+          <article class="track-card reveal">
+            <div class="track-thumb" style="background-image:url('https://www.torneseumprogramador.com.br/images/destaques/comunidade.png');"></div>
+            <div class="track-body">
+              <div class="track-meta">
+                <span>Fundamentos</span>
+                <span>HTML • CSS • Lógica</span>
+              </div>
+              <h3 class="track-title">Trilha Fundamentos</h3>
+              <p class="track-text">
+                Comece do zero e aprenda todos os fundamentos essenciais da programação web. Ideal para quem está
+                saindo totalmente do zero ou recomeçando do jeito certo.
+              </p>
+            </div>
+          </article>
+
+          <article class="track-card reveal">
+            <div class="track-thumb" style="background-image:url('https://www.torneseumprogramador.com.br/images/logos/react.png');"></div>
+            <div class="track-body">
+              <div class="track-meta">
+                <span>Frontend</span>
+                <span>React • Next.js</span>
+              </div>
+              <h3 class="track-title">Trilha Frontend</h3>
+              <p class="track-text">
+                Construa interfaces modernas e responsivas com React, Next.js e as ferramentas que o mercado mais usa
+                hoje em desenvolvimento frontend.
+              </p>
+            </div>
+          </article>
+
+          <article class="track-card reveal">
+            <div class="track-thumb" style="background-image:url('https://www.torneseumprogramador.com.br/images/logos/php-laravel.png');"></div>
+            <div class="track-body">
+              <div class="track-meta">
+                <span>Backend</span>
+                <span>PHP • Laravel</span>
+              </div>
+              <h3 class="track-title">Trilha Backend</h3>
+              <p class="track-text">
+                Aprenda a criar APIs, sistemas completos, autenticação, segurança e tudo o que você precisa
+                para atuar como dev backend usando PHP e Laravel.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="cursos">
+      <div class="container">
+        <div class="courses-header reveal">
+          <div>
+            <h2 class="section-title">Todos os cursos que você libera na Black November</h2>
+            <p class="section-subtitle">
+              Abaixo você vê tudo o que está incluso: imagem do curso, quantidade de aulas e horas. Use a busca
+              para encontrar tecnologias específicas.
+            </p>
+          </div>
+          <div class="courses-filters">
+            <input class="input-search" id="course-search" type="search" placeholder="Buscar por nome do curso..." />
+          </div>
+        </div>
+
+        <div class="courses-meta reveal">
+          <span class="courses-meta-item" id="meta-cursos">Carregando cursos...</span>
+          <span class="courses-meta-item" id="meta-aulas">— aulas</span>
+          <span class="courses-meta-item" id="meta-horas">— horas de conteúdo</span>
+        </div>
+
+        <div class="courses-grid" id="courses-grid">
+          <!-- Preenchido via JS com base no cursos_final.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- BONUS -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Bônus exclusivos da Black November</h2>
+          <p class="section-subtitle">
+            Além de todos os cursos da Comunidade, você ainda leva benefícios pensados para acelerar sua evolução
+            e te dar mais segurança na decisão.
+          </p>
+        </div>
+
+        <div class="bonus-grid">
+          <article class="bonus-card reveal">
+            <div class="bonus-label">Bônus 01</div>
+            <h3 class="bonus-title">Aulas especiais sobre IA aplicada à programação</h3>
+            <p class="bonus-text">
+              Aprenda a usar ferramentas de IA para acelerar sua produtividade no dia a dia como dev: geração de código,
+              revisão, documentação, brainstorm de soluções e muito mais.
+            </p>
+          </article>
+
+          <article class="bonus-card reveal">
+            <div class="bonus-label">Bônus 02</div>
+            <h3 class="bonus-title">Atualizações futuras da Comunidade</h3>
+            <p class="bonus-text">
+              Você entra agora com condições de Black November e continua recebendo novos cursos, trilhas
+              e conteúdos que forem sendo lançados dentro da comunidade.
+            </p>
+          </article>
+
+          <article class="bonus-card reveal">
+            <div class="bonus-label">Bônus 03</div>
+            <h3 class="bonus-title">Material de apoio e códigos dos projetos</h3>
+            <p class="bonus-text">
+              Tenha acesso aos códigos-fonte, materiais complementares e recursos extras usados nas aulas
+              para facilitar seu estudo e acelerar a prática.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section>
+      <div class="container guarantee">
+        <div class="reveal">
+          <div class="guarantee-label">Garantia incondicional</div>
+          <div class="guarantee-big">7</div>
+          <div class="section-title" style="margin-top:.4rem;">dias para testar sem medo</div>
+          <p class="guarantee-text">
+            Você tem 7 dias completos para entrar na Comunidade, assistir às aulas, conhecer as trilhas, testar
+            os materiais e ver se faz sentido para você.
+          </p>
+          <p class="guarantee-text">
+            Se dentro desse prazo você sentir que não é o momento ou que o conteúdo não encaixou na sua realidade,
+            basta enviar uma mensagem para o suporte que o seu investimento é devolvido integralmente.
+            Simples assim. Sem letrinha miúda.
+          </p>
+        </div>
+
+        <div class="guarantee-card reveal">
+          <h3 class="feature-title">Resumindo:</h3>
+          <ul style="list-style:none;font-size:.9rem;color:var(--text-muted);margin-top:.7rem;display:flex;flex-direction:column;gap:.45rem;">
+            <li>✓ Você entra hoje pagando o menor valor de Black November (Lote 01).</li>
+            <li>✓ Tem acesso a dezenas de cursos, trilhas e projetos práticos.</li>
+            <li>✓ Recebe bônus exclusivos focados em IA e atualizações futuras.</li>
+            <li>✓ Pode testar tudo por 7 dias sem risco. Se não fizer sentido, é só pedir reembolso.</li>
+          </ul>
+          <button class="btn btn-primary" style="margin-top:1.1rem;width:100%;" onclick="scrollToSection('checkout')">
+            Quero aproveitar a Black November sem risco
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="container faq-grid">
+        <div class="reveal">
+          <div class="section-header" style="margin-bottom:1.4rem;">
+            <h2 class="section-title">Dúvidas frequentes antes de entrar</h2>
+            <p class="section-subtitle">
+              Leia essas respostas com atenção. Elas provavelmente esclarecem exatamente o que está passando
+              pela sua cabeça agora.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3 class="feature-title">Lembrete importante</h3>
+            <p class="feature-text">
+              Não existe momento perfeito para começar. Sempre vai parecer que falta tempo, dinheiro,
+              ou que “ano que vem eu vejo isso”. A Black November existe justamente para você aproveitar
+              uma condição que não vai ficar disponível o ano inteiro.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <div class="faq-question">
+              <span>Sou totalmente iniciante. Essa comunidade serve para mim?</span>
+              <span class="faq-toggle">−</span>
+            </div>
+            <div class="faq-answer">
+              Sim. A ideia é justamente te tirar do zero com uma trilha de Fundamentos bem organizada,
+              para depois te levar para Frontend, Backend e outras áreas. Você não precisa saber nada
+              de programação para começar.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Em quanto tempo vou conseguir meu primeiro resultado?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Depende totalmente da sua disciplina. A comunidade não é atalho mágico, mas te dá um caminho
+              claro. Se você estudar com consistência, aplicar os projetos e aproveitar o suporte, você
+              encurta o tempo até seu primeiro freela, estágio ou vaga júnior.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Por quanto tempo vou ter acesso aos cursos?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Esta condição de Black November é para você entrar na Comunidade com acesso completo conforme
+              descrito na oferta atual. Detalhes finos de prazo e modalidade ficam esclarecidos na página de
+              pagamento, antes de você finalizar a compra.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Como funciona a garantia de 7 dias?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Você se inscreve, recebe acesso, navega pelos cursos, assiste às aulas e testa tudo. Se dentro
+              de 7 dias você decidir que não quer continuar, é só acionar o suporte dentro da própria
+              plataforma que sua compra é cancelada e o valor devolvido.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>O que acontece quando o Lote 01 acabar?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Quando a barra chegar a 100%, o Lote 01 é encerrado e o valor atual não volta mais. O próximo
+              lote entra com preço maior. Se você quer aproveitar a melhor condição, o momento é agora.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section>
+      <div class="container">
+        <div class="final-cta reveal">
+          <h2 class="final-cta-title">A decisão é simples: ficar travado ou aproveitar a Black November.</h2>
+          <p class="final-cta-sub">
+            Se você leu até aqui, é porque sabe que programação precisa ser prioridade na sua vida.
+            A Comunidade Torne-se um Programador está abrindo a porta com um valor de Lote 01 que não
+            deve se repetir. O próximo passo é totalmente seu.
+          </p>
+          <button class="btn btn-primary" onclick="scrollToSection('checkout')">
+            Quero entrar na Comunidade Torne-se um Programador
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Comunidade Torne-se um Programador • Oferta especial de Black November • Condições e valores sujeitos a alteração de lote.
+  </footer>
+</div>
+
+<script>
+  // Scroll suave para seções
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    window.scrollTo({
+      top: el.getBoundingClientRect().top + window.scrollY - 80,
+      behavior: "smooth"
+    });
+  }
+
+  // Animação da barra de lote
+  document.addEventListener("DOMContentLoaded", function () {
+    const loteFill = document.getElementById("lote-fill");
+    const heroCard = document.querySelector(".hero-card");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loteFill.style.width = "65%"; // LOTE 01 65% preenchido
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    if (heroCard) observer.observe(heroCard);
+  });
+
+  // Reveal onscreen
+  const revealEls = document.querySelectorAll(".reveal");
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  revealEls.forEach((el) => revealObserver.observe(el));
+
+  // FAQ toggle
+  document.addEventListener("click", function (e) {
+    const item = e.target.closest(".faq-item");
+    if (!item) return;
+    const open = item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach((it) => it.classList.remove("open"));
+    if (!open) item.classList.add("open");
+
+    document.querySelectorAll(".faq-item").forEach((it) => {
+      const toggle = it.querySelector(".faq-toggle");
+      if (!toggle) return;
+      toggle.textContent = it.classList.contains("open") ? "−" : "+";
+    });
+  });
+
+  // CARREGAR CURSOS DO cursos_final.json
+  let allCourses = [];
+
+  function renderCourses(filterText) {
+    const grid = document.getElementById("courses-grid");
+    const term = (filterText || "").trim().toLowerCase();
+    grid.innerHTML = "";
+
+    const filtered = allCourses.filter((curso) => {
+      if (!term) return true;
+      return curso.nome.toLowerCase().includes(term);
+    });
+
+    if (!filtered.length) {
+      grid.innerHTML = '<p style="grid-column:1/-1;font-size:.9rem;color:#9ca3af;">Nenhum curso encontrado para esse termo. Tente outro nome ou tecnologia.</p>';
+      return;
+    }
+
+    filtered.forEach((curso) => {
+      const article = document.createElement("article");
+      article.className = "course-card";
+      article.innerHTML = `
+        <div class="course-thumb">
+          <img src="${curso.imagem}" alt="${curso.nome}">
+          <div class="course-pill">${curso.aulas} aula(s)</div>
+        </div>
+        <div class="course-body">
+          <h3 class="course-title">${curso.nome}</h3>
+          <div class="course-meta">
+            <span><span class="course-dot"></span>${curso.aulas} aula(s)</span>
+            <span><span class="course-dot"></span>${curso.horas} h</span>
+          </div>
+        </div>
+      `;
+      grid.appendChild(article);
+    });
+  }
+
+  function updateStats(cursos) {
+    const totalCursos = cursos.length;
+    const totalAulas = cursos.reduce((acc, c) => acc + (parseInt(c.aulas || 0, 10) || 0), 0);
+    const totalHoras = cursos.reduce((acc, c) => acc + (parseInt(c.horas || 0, 10) || 0), 0);
+
+    document.querySelector('[data-stat="cursos"]').textContent = totalCursos + " cursos";
+    document.querySelector('[data-stat="aulas"]').textContent = totalAulas + " aulas";
+    document.querySelector('[data-stat="horas"]').textContent = totalHoras + " horas";
+
+    document.getElementById("meta-cursos").textContent = totalCursos + " cursos inclusos";
+    document.getElementById("meta-aulas").textContent = totalAulas + " aulas no total";
+    document.getElementById("meta-horas").textContent = totalHoras + " horas de conteúdo";
+  }
+
+  // Busca
+  document.getElementById("course-search").addEventListener("input", function (e) {
+    renderCourses(e.target.value);
+  });
+
+  const usingFileProtocol = location.protocol === "file:";
+  if (usingFileProtocol) {
+    const grid = document.getElementById("courses-grid");
+    grid.innerHTML = `
+      <p style="grid-column:1/-1;font-size:.9rem;color:#9ca3af;">
+        Para carregar a listagem automática dos cursos, abra este arquivo em um servidor local (http).
+        Exemplo: execute <strong>python -m http.server</strong> nesta pasta e acesse <strong>http://localhost:8000/</strong>.
+      </p>
+    `;
+  } else {
+    fetch("cursos_final.json")
+      .then((res) => res.json())
+      .then((cursos) => {
+        allCourses = (cursos || []).map((c) => ({
+          nome: c.nome || "Curso sem nome",
+          imagem: c.imagem || "https://via.placeholder.com/640x360?text=Curso",
+          aulas: c.aulas || 0,
+          horas: c.horas || 0
+        }));
+        updateStats(allCourses);
+        renderCourses("");
+      })
+      .catch((err) => {
+        console.error("Erro ao carregar cursos_final.json", err);
+        const grid = document.getElementById("courses-grid");
+        grid.innerHTML = `
+          <p style="grid-column:1/-1;font-size:.9rem;color:#9ca3af;">
+            Não foi possível carregar a listagem automática dos cursos.
+            Verifique se o arquivo <strong>cursos_final.json</strong> está na mesma pasta deste HTML.
+          </p>
+        `;
+      });
+  }
+</script>
+</body>
+</html>
