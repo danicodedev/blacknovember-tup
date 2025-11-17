@@ -37,10 +37,7 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 10% -10%, #0043ff 0, transparent 55%),
-        radial-gradient(circle at 90% -20%, #0043ff 0, transparent 55%),
-        radial-gradient(circle at 50% 120%, #0043ff 0, #020617 60%);
+      background: black;
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -73,7 +70,7 @@
       top: 0;
       z-index: 40;
       backdrop-filter: blur(22px);
-      background: linear-gradient(to bottom, rgba(15,23,42,0.98), rgba(15,23,42,0.86), transparent);
+      background: rgba(174, 37, 28, 0.91);
       border-bottom: 1px solid rgba(148,163,184,0.16);
     }
 
@@ -105,7 +102,7 @@
     .nav-logo span {
       background: linear-gradient(120deg, #f97316, #fde047);
       -webkit-background-clip: text;
-      color: transparent;
+     /* color: transparent; */ 
     }
 
     .nav-chip {
@@ -113,8 +110,8 @@
       padding: .18rem .7rem;
       border-radius: 999px;
       border: 1px solid rgba(148,163,184,0.6);
-      color: var(--text-muted);
-      background: rgba(15,23,42,0.85);
+      color: #ffffff;
+      /*background: rgba(15,23,42,0.85);*/
     }
 
     .nav-cta {
@@ -162,8 +159,8 @@
     }
 
     .btn-secondary {
-      background: rgba(15,23,42,0.95);
-      color: var(--text-main);
+      /*background: rgba(15,23,42,0.95);*/
+      color: #000000;
       border: 1px solid rgba(148,163,184,0.5);
     }
 
@@ -1065,7 +1062,7 @@
         <div class="nav-left">
           <div class="nav-logo">
             <span>TUP</span>
-            <span style="font-weight:500;color:#9ca3af;letter-spacing:.02em;">Comunidade</span>
+            <span style="font-weight:500;/* color:#9ca3af; */letter-spacing:.02em;">Comunidade</span>
           </div>
           <div class="nav-chip">Black November • Lote 01 ativo</div>
         </div>
