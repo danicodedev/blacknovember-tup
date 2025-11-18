@@ -226,6 +226,25 @@
       z-index: 1;
     }
 
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-logo {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 14px 30px rgba(0,0,0,0.6));
+    }
+
+    .hero-logo-mobile {
+      display: none;
+    }
+
     .hero-title {
       font-family: "Space Grotesk", system-ui;
       font-weight: 800;
@@ -1132,6 +1151,19 @@
         padding-top: 4rem;
       }
 
+      .hero-logo-mobile {
+        display: block;
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        margin: 0 auto .8rem;
+        filter: drop-shadow(0 14px 30px rgba(0,0,0,0.6));
+      }
+
+      .hero-logo {
+        display: none;
+      }
+
       .hero-actions {
         flex-direction: column;
         align-items: stretch;
@@ -1176,6 +1208,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-left reveal">
+          <img class="hero-logo-mobile" src="https://i.imgur.com/6MrXSnn.png" alt="Black November" />
           <div class="pill">
             <span class="pill-dot"></span>
             Black November • Comunidade Torne-se um Programador
@@ -1230,59 +1263,50 @@
           </div>
         </div>
 
-        <!-- HERO CARD / CHECKOUT -->
-        <div class="hero-card reveal" id="checkout">
-          <div class="hero-card-glow"></div>
-          <div class="hero-card-inner">
-            <div class="lote-pill">
-             <!--  <span>01</span>Lote 01 identifier -->
-              Lote 01 • Black November
-            </div>
-
-            <h2 class="hero-card-title">Entre agora na Comunidade Torne-se um Programador</h2>
-            <p class="hero-card-subtitle">
-              Acesso completo a todos os cursos da comunidade, atualizações futuras e bônus da Black November.
-            </p>
-
-            <div class="hero-price-row">
-              <span style="font-size:.76rem;color:var(--text-muted);"><s>de R$ 497,00</s></span>
-              <div class="hero-price-main">12x R$ 16,97</div>
-              <div class="hero-price-installments">
-                ou <strong>R$ 170,00 à vista</strong><br/>
-                
+        <div class="hero-right reveal">
+          <img class="hero-logo" src="https://i.imgur.com/6MrXSnn.png" alt="Black November" />
+          <div class="hero-card" id="checkout">
+            <div class="hero-card-glow"></div>
+            <div class="hero-card-inner">
+              <div class="lote-pill">
+                Lote 01 • Black November
               </div>
-            </div>
 
-            <p class="hero-price-avis">
-              <span>Atenção:</span> este é o valor do <strong>Lote 01</strong>. Assim que ele virar, o preço sobe
-              imediatamente para o próximo lote.
-            </p>
+              <h2 class="hero-card-title">Entre agora na Comunidade Torne-se um Programador</h2>
+              <p class="hero-card-subtitle">
+                Acesso completo a todos os cursos da comunidade, atualizações futuras e bônus da Black November.
+              </p>
 
-            <div class="hero-lote-bar">
-              <div class="hero-lote-bar-label">
-                <span>Lote 01 em andamento</span>
-                <span id="lote-percent-label">65% das vagas preenchidas</span>
+              <div class="hero-price-row">
+                <span style="font-size:.76rem;color:var(--text-muted);"><s>de R$ 497,00</s></span>
+                <div class="hero-price-main">12x R$ 16,97</div>
+                <div class="hero-price-installments">
+                  ou <strong>R$ 170,00 à vista</strong><br/>
+                </div>
               </div>
-              <div class="hero-lote-bar-track">
-                <div class="hero-lote-bar-fill" id="lote-fill"></div>
-              </div>
-            </div>
-            <p class="hero-lote-bar-hint">
-              Quando a barra chegar a 100%, o <strong>Lote 01</strong> é encerrado e este valor não volta.
-            </p>
 
-            <div class="hero-card-footer">
-              <button class="btn btn-primary" style="flex:1" onclick="scrollToSection('cursos')">
-                Ver tudo que vou receber
-              </button>
-              <!-- Garantia de 7 dias
-              <div class="hero-card-safe">
-                <div class="hero-card-safe-icon">✓</div>
-                <div>
-                  Garantia incondicional de <strong>7 dias</strong>.<br/>
-                  Se não fizer sentido, é só pedir reembolso.
-                </div> 
-              </div>-->
+              <p class="hero-price-avis">
+                <span>Atenção:</span> este é o valor do <strong>Lote 01</strong>. Assim que ele virar, o preço sobe
+                imediatamente para o próximo lote.
+              </p>
+
+              <div class="hero-lote-bar">
+                <div class="hero-lote-bar-label">
+                  <span>Lote 01 em andamento</span>
+                  <span id="lote-percent-label">65% das vagas preenchidas</span>
+                </div>
+                <div class="hero-lote-bar-track">
+                  <div class="hero-lote-bar-fill" id="lote-fill"></div>
+                </div>
+              </div>
+              <p class="hero-lote-bar-hint">
+                Quando a barra chegar a 100%, o <strong>Lote 01</strong> é encerrado e este valor não volta.
+              </p>
+
+              <div class="hero-card-footer">
+                <button class="btn btn-primary" style="flex:1" onclick="scrollToSection('cursos')">
+                  Ver tudo que vou receber
+                </button>
               </div>
             </div>
           </div>
