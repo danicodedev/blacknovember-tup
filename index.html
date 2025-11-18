@@ -978,6 +978,80 @@
       box-shadow: var(--shadow-soft);
     }
 
+    /* MENTOR SECTION */
+    .mentor-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .mentor-photo {
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mentor-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mentor-eyebrow {
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: .4rem;
+    }
+
+    .mentor-name {
+      font-family: "Space Grotesk";
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+
+    .mentor-bio {
+      font-size: .95rem;
+      color: var(--text-muted);
+      max-width: 40rem;
+    }
+
+    .mentor-points {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-top: .9rem;
+    }
+
+    .mentor-point {
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: .75rem .9rem;
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mentor-point .icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: rgb(0 0 0 / 32%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
     /* ANIMAÇÕES / RESPONSIVO */
 
     .reveal {
@@ -1033,6 +1107,10 @@
 
       .tracks-grid {
         grid-template-columns: minmax(0,1fr);
+      }
+      .mentor-grid {
+        grid-template-columns: minmax(0,1fr);
+        gap: 1.4rem;
       }
     }
 
@@ -1444,11 +1522,45 @@
           </article>
         </div>
       </div>
-    </section>
+  </section>
 
-    <!-- GUARANTEE -->
-    <section>
-      <div class="container guarantee">
+  <!-- MENTOR -->
+  <section>
+    <div class="container">
+      <div class="mentor-grid">
+        <div class="mentor-photo reveal">
+          <img src="https://i.imgur.com/Iuk2j5U.png" alt="Instrutor da Comunidade" />
+        </div>
+        <div class="reveal">
+          <div class="mentor-eyebrow">Com quem você vai aprender?</div>
+          <div class="mentor-name">Danilo Aparecido</div>
+          <p class="mentor-bio">
+            Arquiteto de Software com mais de 20 anos de carreira, atuando na formação de desenvolvedores
+            e na construção de projetos reais. Dentro da Comunidade, o foco é te dar um caminho claro,
+            prática guiada e suporte para você acelerar seus primeiros resultados.
+          </p>
+          <div class="mentor-points">
+            <div class="mentor-point">
+              <div class="icon">🎓</div>
+              <div>Treinou equipes em empresas líderes como Itaú, XP, Accenture, Localiza e iFood.</div>
+            </div>
+            <div class="mentor-point">
+              <div class="icon">🚀</div>
+              <div>Fundador do Torne-se um Programador, ensino direto ao ponto e projetos que viram portfólio.</div>
+            </div>
+            <div class="mentor-point">
+              <div class="icon">💼</div>
+              <div>Mais de 20 anos construindo software de pequeno, médio e grande porte.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section>
+    <div class="container guarantee">
         <div class="reveal">
           <div class="guarantee-label">Garantia incondicional</div>
           <div class="guarantee-big">7</div>
