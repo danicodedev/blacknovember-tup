@@ -997,6 +997,56 @@
       box-shadow: var(--shadow-soft);
     }
 
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 1.2rem;
+    }
+
+    .video-embed {
+      position: relative;
+      aspect-ratio: 16/9;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .scroll-top-btn {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: radial-gradient(circle at 0 0, rgba(248,150,65,0.35), rgba(15,23,42,0.95));
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow-chip);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+      z-index: 50;
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     /* MENTOR SECTION */
     .mentor-grid {
       display: grid;
@@ -1130,6 +1180,9 @@
       .mentor-grid {
         grid-template-columns: minmax(0,1fr);
         gap: 1.4rem;
+      }
+      .testimonials-grid {
+        grid-template-columns: minmax(0,1fr);
       }
     }
 
@@ -1548,6 +1601,29 @@
       </div>
   </section>
 
+  <section id="depoimentos">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Depoimentos de quem já está na Comunidade</h2>
+        <p class="section-subtitle">Histórias reais de alunos acelerando resultados com trilhas e projetos.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="video-embed reveal">
+          <iframe src="https://www.youtube.com/embed/GEKLkkYOmj4" title="Depoimento 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-embed reveal">
+          <iframe src="https://www.youtube.com/embed/0o6TZlvc_io" title="Depoimento 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-embed reveal">
+          <iframe src="https://www.youtube.com/embed/otzO95EQ-ac" title="Depoimento 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-embed reveal">
+          <iframe src="https://www.youtube.com/embed/fd1jzH8defg" title="Depoimento 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- MENTOR -->
   <section>
     <div class="container">
@@ -1719,6 +1795,8 @@
 
   </main>
 
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Voltar ao topo">↑</button>
+
   <footer>
     Comunidade Torne-se um Programador • Oferta especial de Black November • Condições e valores sujeitos a alteração de lote.
   </footer>
@@ -1767,6 +1845,22 @@
     { threshold: 0.2 }
   );
   revealEls.forEach((el) => revealObserver.observe(el));
+
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  const pasEl = document.getElementById("pas");
+  function updateScrollTopBtn() {
+    if (!scrollTopBtn || !pasEl) return;
+    const threshold = pasEl.getBoundingClientRect().top + window.scrollY;
+    const show = window.scrollY >= threshold;
+    scrollTopBtn.classList.toggle("visible", show);
+  }
+  window.addEventListener("scroll", updateScrollTopBtn, { passive: true });
+  window.addEventListener("load", updateScrollTopBtn);
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
   // FAQ toggle
   document.addEventListener("click", function (e) {
