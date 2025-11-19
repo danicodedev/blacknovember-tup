@@ -1,18 +1,9 @@
 [
   {
-    "nome": "Comunidade TSUP",
-    "imagem": "https://www.torneseumprogramador.com.br/images/destaques/comunidade.png",
-    "aulas": 0,
-    "horas": 0,
-    "valor": "de R$ 300,00 por 12x R$ 16,97 ou 170,00 à vista",
-    "compra_link": "https://pay.hotmart.com/W18397446W?off=5owzvhxi&checkoutMode=6&split=12",
-    "comunidade": true
-  },
-  {
     "nome": "Programando com I.A",
     "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/desafios/capa-programando-ia.webp",
-    "aulas": 0,
-    "horas": 0,
+    "aulas": 18,
+    "horas": 18,
     "valor": "de R$ 166,00 por 12x R$ 14,61 ou 145,49 à vista",
     "compra_link": "https://pay.kiwify.com.br/xmjk7D1",
     "comunidade": true
@@ -38,8 +29,8 @@
   {
     "nome": "AWS Serverless",
     "imagem": "https://www.torneseumprogramador.com.br/images/mentorias/tecnico/aws-serverless.png",
-    "aulas": 0,
-    "horas": 0,
+    "aulas": 25,
+    "horas": 25,
     "valor": null,
     "compra_link": null,
     "comunidade": true
