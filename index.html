@@ -1047,6 +1047,58 @@
       pointer-events: auto;
     }
 
+    /* CERTIFICADO SECTION */
+    .certificate-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .certificate-image {
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .certificate-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .certificate-points {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-top: .9rem;
+    }
+
+    .certificate-point {
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: .75rem .9rem;
+      display: flex;
+      gap: .6rem;
+      align-items: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .certificate-point .icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
     /* MENTOR SECTION */
     .mentor-grid {
       display: grid;
@@ -1182,6 +1234,9 @@
         gap: 1.4rem;
       }
       .testimonials-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .certificate-grid {
         grid-template-columns: minmax(0,1fr);
       }
     }
@@ -1599,6 +1654,26 @@
           </article>
         </div>
       </div>
+  </section>
+
+  <section id="certificado">
+    <div class="container">
+      <div class="certificate-grid">
+        <div class="certificate-image reveal">
+          <img src="https://i.imgur.com/VbnLdQ4.png" alt="Certificado da Comunidade" />
+        </div>
+        <div class="reveal">
+          <div class="section-title">Certificados por módulo</div>
+          <p class="section-subtitle">Ao concluir cada módulo, você pode gerar 1 certificado nominal para adicionar ao seu LinkedIn, usar como horas complementares e comprovar conhecimentos para processos seletivos.</p>
+          <div class="certificate-points">
+            <div class="certificate-point"><div class="icon">🏅</div><div>1 certificado por módulo concluído</div></div>
+            <div class="certificate-point"><div class="icon">🔗</div><div>Perfeito para destacar no LinkedIn</div></div>
+            <div class="certificate-point"><div class="icon">⏱️</div><div>Válido como horas complementares</div></div>
+            <div class="certificate-point"><div class="icon">✅</div><div>Comprova conhecimento para o mercado</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="depoimentos">
