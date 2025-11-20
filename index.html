@@ -756,6 +756,123 @@
       gap: 1.2rem;
     }
 
+    /* LOTES SECTION */
+    .lots-grid {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 1.1rem;
+    }
+
+    .lot-card {
+      background: radial-gradient(circle at 0 0, rgba(248,250,252,0.1), transparent 55%), var(--bg-card);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 1rem 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lot-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .8rem;
+    }
+
+    .lot-status {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      padding: .18rem .55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: var(--text-muted);
+      background: rgba(15,23,42,0.85);
+    }
+
+    .lot-status--active {
+      color: #22c55e;
+      border-color: rgba(34,197,94,0.7);
+      background: rgba(34,197,94,0.12);
+    }
+
+    .lot-body {
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+
+    .lot-label {
+      font-size: .82rem;
+      color: var(--text-muted);
+    }
+
+    .lot-amount {
+      font-family: "Space Grotesk";
+      font-size: 1.2rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #f97316, #fde68a);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .lot-hint {
+      font-size: .8rem;
+      color: var(--text-muted);
+    }
+
+    .lot-footer {
+      margin-top: .5rem;
+      font-size: .78rem;
+      color: var(--text-muted);
+    }
+
+    .lot-progress {
+      margin-top: .8rem;
+    }
+
+    .lot-progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--text-muted);
+      margin-bottom: .3rem;
+    }
+
+    .lot-progress-track {
+      position: relative;
+      background: rgba(15,23,42,0.95);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.55);
+      height: .85rem;
+    }
+
+    .lot-progress-fill {
+      position: absolute;
+      inset: 0;
+      width: 0;
+      background: linear-gradient(90deg, #22c55e, #a3e635, #facc15, #f97316);
+      box-shadow: 0 0 20px rgba(250,204,21,0.8);
+      border-radius: inherit;
+      transform-origin: left center;
+      transition: width 1.8s cubic-bezier(.16,1,.3,1);
+    }
+
+    .lot-card--active {
+      border-color: rgba(34,197,94,0.7);
+      box-shadow: 0 0 0 1px rgba(34,197,94,0.35), 0 18px 45px rgba(15,23,42,0.9);
+      animation: lotGlow 2.2s ease-in-out infinite;
+    }
+
+    @keyframes lotGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.0), 0 18px 45px rgba(15,23,42,0.9); }
+      50% { box-shadow: 0 0 0 6px rgba(34,197,94,0.25), 0 22px 55px rgba(15,23,42,1); }
+    }
+
     .course-card {
       background: radial-gradient(circle at 0 0, rgba(248,250,252,0.1), transparent 55%), var(--bg-card);
       border-radius: 18px;
@@ -1217,6 +1334,9 @@
       .tracks-grid {
         grid-template-columns: repeat(2,minmax(0,1fr));
       }
+      .lots-grid {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+      }
     }
 
     @media (max-width: 900px) {
@@ -1251,6 +1371,9 @@
 
       .tracks-grid {
         grid-template-columns: minmax(0,1fr);
+      }
+      .lots-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
       }
       .mentor-grid {
         grid-template-columns: minmax(0,1fr);
@@ -1305,6 +1428,9 @@
       }
 
       .pas-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .lots-grid {
         grid-template-columns: minmax(0,1fr);
       }
     }
@@ -1444,6 +1570,73 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <section id="lotes">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Próximos lotes</h2>
+          <p class="section-subtitle">Cada virada de lote aumenta o valor. Veja o que acontece se você deixar para depois.</p>
+        </div>
+        <div class="lots-grid">
+          <article class="lot-card lot-card--active reveal">
+            <div class="lot-header">
+              <div class="lote-pill">Lote 01</div>
+              <div class="lot-status lot-status--active">Ativo agora</div>
+            </div>
+            <div class="lot-body">
+              <div class="lot-label">Lote atual disponível</div>
+              <div class="lot-amount">12x R$ 15,20</div>
+              <div class="lot-hint">ou R$ 147,00 à vista</div>
+              <div class="lot-footer">Este é o menor valor. Quando virar, você paga o próximo lote.</div>
+              <div class="lot-progress">
+                <div class="lot-progress-label">
+                  <span id="lotes-percent-label">65% das vagas preenchidas</span>
+                </div>
+                <div class="lot-progress-track">
+                  <div class="lot-progress-fill" id="lotes-fill"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="lot-card reveal">
+            <div class="lot-header">
+              <div class="lote-pill">Lote 02</div>
+              <div class="lot-status">Próximo lote</div>
+            </div>
+            <div class="lot-body">
+              <div class="lot-label">Preço sobe no próximo lote</div>
+              <div class="lot-amount">R$177</div>
+              <div class="lot-footer">Assim que o Lote 01 encerrar, você paga o novo valor.</div>
+            </div>
+          </article>
+
+          <article class="lot-card reveal">
+            <div class="lot-header">
+              <div class="lote-pill">Lote 03</div>
+              <div class="lot-status">Futuro</div>
+            </div>
+            <div class="lot-body">
+              <div class="lot-label">Preço continua subindo</div>
+              <div class="lot-amount">R$247</div>
+              <div class="lot-footer">A cada lote, você paga mais caro pelo mesmo acesso.</div>
+            </div>
+          </article>
+
+          <article class="lot-card reveal">
+            <div class="lot-header">
+              <div class="lote-pill">Lote Final</div>
+              <div class="lot-status">Último lote</div>
+            </div>
+            <div class="lot-body">
+              <div class="lot-label">Último lote da Black November</div>
+              <div class="lot-amount">R$497</div>
+              <div class="lot-footer">Depois disso, a oferta atual não volta.</div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1960,6 +2153,24 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const lotFill = document.getElementById("lotes-fill");
+    const lotCard = document.querySelector("#lotes .lot-card--active");
+    if (!lotFill || !lotCard) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            lotFill.style.width = "65%";
+            obs.disconnect();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    obs.observe(lotCard);
+  });
 
   // FAQ toggle
   document.addEventListener("click", function (e) {
