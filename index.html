@@ -158,6 +158,16 @@
       box-shadow: 0 0px 65px #22c55e;
     }
 
+    @keyframes pulseGlow {
+      0% { transform: scale(1); box-shadow: 0 0 45px #22c55e; filter: brightness(1); }
+      50% { transform: scale(1.04); box-shadow: 0 0 80px #22c55e; filter: brightness(1.1); }
+      100% { transform: scale(1); box-shadow: 0 0 45px #22c55e; filter: brightness(1); }
+    }
+
+    .btn-pulse {
+      animation: pulseGlow 1.6s ease-in-out infinite;
+    }
+
     .btn-secondary {
       /*background: rgba(15,23,42,0.95);*/
       color: #000000;
@@ -1377,7 +1387,7 @@
             <div class="hero-card-glow"></div>
             <div class="hero-card-inner">
               <div class="lote-pill">
-                Lote 01 • Black November
+                Lote 01 • VITALÍCIO
               </div>
 
               <h2 class="hero-card-title">Entre agora na Comunidade Torne-se um Programador</h2>
@@ -1394,8 +1404,8 @@
               </div>
 
               <p class="hero-price-avis">
-                <span>Atenção:</span> este é o valor do <strong>Lote 01</strong>. Assim que ele virar, o preço sobe
-                imediatamente para o próximo lote.
+                <span>Atenção:</span> este é o valor do <strong>Lote 01 VITALÍCIO</strong>. Assim que ele virar, o preço sobe
+                imediatamente e a condição de VITALÍCIO é perdida!
               </p>
 
               <div class="hero-lote-bar">
@@ -1412,7 +1422,7 @@
               </p>
 
               <div class="hero-card-footer">
-                <a class="btn btn-primary" style="flex:1" href="https://pay.hotmart.com/C102600602E?off=m36hyayt&bid=1763560360907" target="_blank" rel="noopener">
+                <a class="btn btn-primary btn-pulse" style="flex:1" href="https://pay.hotmart.com/C102600602E?off=m36hyayt&bid=1763560360907" target="_blank" rel="noopener">
                   Comprar agora
                 </a>
               </div>
