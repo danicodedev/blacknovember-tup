@@ -869,6 +869,136 @@
       font-weight: 600;
     }
 
+    /* MODAL AULAS */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,0.8);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+    .modal-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .modal {
+      width: 96%;
+      max-width: 960px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .modal-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .modal-close {
+      background: transparent;
+      border: 1px solid var(--border-soft);
+      color: #e5e7eb;
+      border-radius: 999px;
+      padding: .3rem .6rem;
+      cursor: pointer;
+    }
+    .modal-body {
+      padding: 1rem 1.2rem 1.2rem;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1rem;
+    }
+    .lesson-player {
+      aspect-ratio: 16/9;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--border-soft);
+    }
+    .lessons-list {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      max-height: 60vh;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(148,163,184,0.5) rgba(15,23,42,0.6);
+      overscroll-behavior: contain;
+      padding-right: .2rem;
+    }
+    .lessons-list::-webkit-scrollbar { width: 10px; }
+    .lessons-list::-webkit-scrollbar-track { background: rgba(15,23,42,0.6); border-radius: 999px; }
+    .lessons-list::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.35); border-radius: 999px; border: 1px solid rgba(148,163,184,0.55); }
+    .lesson-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: .6rem .7rem;
+    }
+    .lesson-title {
+      font-size: .95rem;
+      font-weight: 600;
+    }
+    .lesson-meta {
+      font-size: .8rem;
+      color: var(--text-muted);
+    }
+    .lesson-badge {
+      padding: .2rem .5rem;
+      border-radius: 999px;
+      font-size: .72rem;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(148,163,184,0.18);
+    }
+    .lock-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .course-lessons-link {
+      margin-top: .6rem;
+      font-size: .9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      width: 100%;
+      padding: .55rem .85rem;
+      border-radius: 12px;
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .course-lessons-link:hover { transform: translateY(-1px); border-color: rgba(148,163,184,0.6); background: rgba(15,23,42,0.9); box-shadow: 0 10px 22px rgba(15,23,42,0.8); }
+    .course-lessons-link::after { content: "→"; display: inline-block; transform: translateY(1px); color: #93c5fd; }
+
+    @media (max-width: 900px) {
+      .modal-body { grid-template-columns: minmax(0,1fr); }
+    }
+
     /* LOTES SECTION */
     .lots-grid {
       display: grid;
@@ -1909,7 +2039,6 @@
         </div>
       </div>
   </section>
-
   <section class="vagas-2026">
     <div class="container">
       <div class="section-header reveal">
@@ -1925,6 +2054,19 @@
       </div>
     </div>
   </section>
+
+  <div id="lessonsModal" class="modal-overlay hidden">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="lessonsModalTitle">
+      <div class="modal-header">
+        <div class="modal-title" id="lessonsModalTitle"></div>
+        <button class="modal-close" id="lessonsModalClose">Fechar</button>
+      </div>
+      <div class="modal-body">
+        <div class="lesson-player" id="lessonPlayer"></div>
+        <div class="lessons-list" id="lessonsList"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- VÍDEO COMUNIDADE -->
     <section>
@@ -2010,7 +2152,19 @@
         </div>
       </div>
   </section>
-
+ <section>
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center;">
+        <h2 class="section-title">👀 desconfio que você ainda não se convenceu... <br>veja como esse aluno faturou + R$28 mil reais:</h2>
+        <p class="section-subtitle" style="max-width:100% !important;">Assista ao depoimento e entenda como aplicar um plano prático pode acelerar seus resultados.</p>
+      </div>
+      <div class="video-container reveal">
+        <iframe src="https://player.vimeo.com/video/781669414?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" allowfullscreen title="Como sair do zero e faturar mais de 28 mil reais"></iframe>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+    </div>
+  </section>
+  
   <section id="certificado">
     <div class="container">
       <div class="certificate-grid">
@@ -2456,6 +2610,76 @@
     });
   });
 
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".course-lessons-link");
+    if (!btn) return;
+    const code = btn.getAttribute("data-codenome") || "";
+    const title = btn.getAttribute("data-title") || "Aulas";
+    openLessonsModal(code, title);
+  });
+
+  const lessonsModal = document.getElementById("lessonsModal");
+  const lessonsTitleEl = document.getElementById("lessonsModalTitle");
+  const lessonsListEl = document.getElementById("lessonsList");
+  const lessonPlayerEl = document.getElementById("lessonPlayer");
+  const lessonsCloseBtn = document.getElementById("lessonsModalClose");
+
+  function openLessonsModal(code, title) {
+    lessonsTitleEl.textContent = title;
+    lessonsListEl.innerHTML = "";
+    lessonPlayerEl.innerHTML = "";
+    let list = (window.lessonsByCode && window.lessonsByCode[code]) || [];
+    if ((!list || !list.length) && window.lessonsByCode) {
+      try {
+        const alt = (title || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "_")
+          .replace(/^_+|_+$/g, "");
+        list = window.lessonsByCode[alt] || list;
+      } catch {}
+    }
+    if (list.length) {
+      const playable = list.find((l) => !!l.playable);
+      if (playable && playable.embedUrl) {
+        const iframe = document.createElement("iframe");
+        iframe.src = playable.embedUrl;
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+        iframe.frameBorder = "0";
+        lessonPlayerEl.appendChild(iframe);
+      } else {
+        lessonPlayerEl.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;color:#9ca3af;height:100%;">Prévia indisponível</div>`;
+      }
+      list.forEach((l, idx) => {
+        const el = document.createElement("div");
+        el.className = "lesson-item";
+        const badge = idx === 0 && l.playable ? `<span class="lesson-badge">Assistir prévia</span>` : `<span class="lesson-badge">Bloqueada</span>`;
+        const lock = idx === 0 && l.playable ? "" : `<div class="lock-icon">🔒</div>`;
+        el.innerHTML = `${lock}<div><div class="lesson-title">${l.titulo || "Aula"}</div><div class="lesson-meta">${l.professor || ""}</div></div>${badge}`;
+        lessonsListEl.appendChild(el);
+      });
+    } else {
+      lessonPlayerEl.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;color:#9ca3af;height:100%;">Aulas deste curso não encontradas</div>`;
+    }
+    lessonsModal.classList.remove("hidden");
+  }
+
+  function closeLessonsModal() {
+    lessonsModal.classList.add("hidden");
+    lessonPlayerEl.innerHTML = "";
+  }
+
+  lessonsCloseBtn.addEventListener("click", closeLessonsModal);
+  lessonsModal.addEventListener("click", function (e) {
+    if (e.target === lessonsModal) closeLessonsModal();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLessonsModal();
+  });
+
   // CARREGAR CURSOS DO cursos_final.json
   // já declarado acima
 
@@ -2488,6 +2712,7 @@
             <span><span class="course-dot"></span>${curso.aulas} aula(s)</span>
             <span><span class="course-dot"></span>${curso.horas} h</span>
           </div>
+          <button class="course-lessons-link" data-codenome="${curso.codeNome || ""}" data-title="${curso.nome}">ver aulas</button>
         </div>
       `;
       grid.appendChild(article);
@@ -2523,6 +2748,17 @@
       </p>
     `;
   } else {
+    function toCodeNome(name) {
+      try {
+        return (name || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "_")
+          .replace(/^_+|_+$/g, "");
+      } catch { return ""; }
+    }
+
     fetch("cursos_final.json")
       .then((res) => res.json())
       .then((cursos) => {
@@ -2530,11 +2766,25 @@
           nome: c.nome || "Curso sem nome",
           imagem: c.imagem || "https://via.placeholder.com/640x360?text=Curso",
           aulas: c.aulas || 0,
-          horas: c.horas || 0
+          horas: c.horas || 0,
+          codeNome: toCodeNome(c.nome || "")
         }));
         updateStats(allCourses);
         renderCourses("");
         renderVagas();
+        return fetch("aulas_por_curso.json");
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        const map = {};
+        const arr = (data && data.cursos) || [];
+        arr.forEach((item) => {
+          if (!item) return;
+          const list = item.aulas || [];
+          const keys = [item.codeNome, item.mapToTipo, (item.mapToTipo ? toCodeNome(item.mapToTipo) : null)];
+          keys.forEach((k) => { if (k) map[k] = list; });
+        });
+        window.lessonsByCode = map;
       })
       .catch((err) => {
         console.error("Erro ao carregar cursos_final.json", err);
